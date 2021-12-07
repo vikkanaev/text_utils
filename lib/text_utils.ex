@@ -1,18 +1,9 @@
 defmodule TextUtils do
-  @moduledoc """
-  Documentation for `TextUtils`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> TextUtils.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def wc(filename) do
+    {:ok, text} = File.read(filename)
+    text
+      |> String.replace(["#", "\n", "[","]"], " ")
+      |> String.splitter([" "], trim: true)
+      |> Enum.count
   end
 end
