@@ -2,7 +2,7 @@ defmodule TextUtilsTest do
   use ExUnit.Case
   doctest TextUtils
 
-  test "greets the world" do
-    assert TextUtils.hello() == :world
+  test "returns 56 like original wc util" do
+    assert TextUtils.wc('README.md') == 56
   end
 end
